@@ -1,8 +1,10 @@
-use bevy_app::{App, Plugin};
+use bevy_app::{
+    App, First, Last, Plugin, PostStartup, PostUpdate, PreStartup, PreUpdate, Startup, Update,
+};
 use bevy_ecs::{
     prelude::World,
-    schedule::{ScheduleLabel, Schedules},
-    system::{Res, SystemParam},
+    schedule::{InternedScheduleLabel, ScheduleLabel},
+    system::{Res, SystemParam, SystemState},
 };
 use context::main_thread::MainThreadContext;
 use std::future::Future;
@@ -126,6 +128,8 @@ pub struct TasksPlugin {
     /// functionality enabled if building for non-wasm32 architectures. On wasm32 the current-thread
     /// scheduler is used instead.
     make_runtime: Box<dyn Fn() -> Runtime + Send + Sync + 'static>,
+    /// Schedules in which to accept tasks.
+    schedules: Vec<InternedScheduleLabel>,
 }
 
 impl Default for TasksPlugin {
@@ -135,6 +139,16 @@ impl Default for TasksPlugin {
     fn default() -> Self {
         Self {
             make_runtime: Box::new(Runtime::default),
+            schedules: vec![
+                PreStartup.intern(),
+                Startup.intern(),
+                PostStartup.intern(),
+                First.intern(),
+                PreUpdate.intern(),
+                Update.intern(),
+                PostUpdate.intern(),
+                Last.intern(),
+            ],
         }
     }
 }
@@ -167,14 +181,13 @@ impl Plugin for TasksPlugin {
             .init_resource::<TaskChannels>()
             .insert_resource((self.make_runtime)());
 
-        let schedules = app
-            .world()
-            .get_resource::<Schedules>()
-            .unwrap()
-            .iter()
-            .map(|(_, schedule)| schedule.label())
-            .collect::<Vec<_>>();
-        for label in schedules {
+        let mut system = SystemState::<Tasks>::new(&mut app.world);
+        let tasks = system.get(&app.world);
+        let task_context = tasks.task_context();
+        drop(system);
+        app.insert_resource(task_context);
+
+        for label in self.schedules.clone().into_iter() {
             app.add_systems(label, Self::run_tasks(label));
         }
     }
