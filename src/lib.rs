@@ -168,7 +168,7 @@ impl Plugin for TasksPlugin {
             .insert_resource((self.make_runtime)());
 
         let schedules = app
-            .world
+            .world()
             .get_resource::<Schedules>()
             .unwrap()
             .iter()

@@ -16,9 +16,9 @@ tokio = ["tokio/full"]
 wasm = []
 
 [dependencies]
-bevy_app = "0.13.0"
-bevy_ecs = "0.13.0"
+bevy_app = { path="../bevy/crates/bevy_app"}
+bevy_ecs = { path="../bevy/crates/bevy_ecs"}
 dashmap = "5.5.3"
 futures-util = { version = "0.3", features = ["channel"] }
-tokio = { version = "1", features = ["sync"] }
+tokio = { version = "1", features = ["sync", "rt"] }
 wasm-bindgen-futures = { version = "0.4.41" }
