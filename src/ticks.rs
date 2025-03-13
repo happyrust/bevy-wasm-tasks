@@ -1,5 +1,5 @@
 use bevy_app::{App, Last, Plugin};
-use bevy_ecs::system::{ResMut, Resource};
+use bevy_ecs::prelude::{ResMut, Resource};
 use std::sync::{
     atomic::{AtomicUsize, Ordering},
     Arc,

@@ -16,9 +16,9 @@ tokio = ["tokio/full"]
 wasm = ["tokio/rt"]
 
 [dependencies]
-bevy_app = { path="../bevy/crates/bevy_app"}
-bevy_ecs = { path="../bevy/crates/bevy_ecs"}
-dashmap = "5.5.3"
+bevy_app = { git = "https://gitee.com/happydpc/bevy", package = "bevy_app" }
+bevy_ecs = { git = "https://gitee.com/happydpc/bevy", package = "bevy_ecs" }
+dashmap = "6.1.0"
 futures-util = { version = "0.3", features = ["channel"] }
 tokio = { version = "1", features = ["sync", "rt"] }
 wasm-bindgen-futures = { version = "0.4.41" }
