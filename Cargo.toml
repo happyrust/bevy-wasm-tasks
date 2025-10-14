@@ -1,8 +1,8 @@
 [package]
 name = "bevy-wasm-tasks"
 # Major and minor version here should match bevy's. Patch version can vary.
-version = "0.13.0"
-edition = "2021"
+version = "0.14.0"
+edition = "2024"
 license = "CC0-1.0"
 description = "Simple integration of WASM tasks into a Bevy app for background processing."
 homepage = "https://crates.io/crates/bevy-wasm-tasks"
@@ -16,8 +16,8 @@ tokio = ["tokio/full"]
 wasm = ["tokio/rt"]
 
 [dependencies]
-bevy_app = { git = "https://gitee.com/happydpc/bevy", package = "bevy_app" }
-bevy_ecs = { git = "https://gitee.com/happydpc/bevy", package = "bevy_ecs" }
+bevy_app = { git = "https://github.com/happyrust/bevy", package = "bevy_app" }
+bevy_ecs = { git = "https://github.com/happyrust/bevy", package = "bevy_ecs" }
 dashmap = "6.1.0"
 futures-util = { version = "0.3", features = ["channel"] }
 tokio = { version = "1", features = ["sync", "rt"] }
