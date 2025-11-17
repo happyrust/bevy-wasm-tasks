@@ -69,7 +69,9 @@ impl<'w> Tasks<'w> {
         Output: Send + 'static,
         Spawnable: FnOnce(TaskContext) -> Task + Send + 'static,
     {
-        unreachable!("This function is private when the `tokio` feature is not enabled and should be uncallable.");
+        unreachable!(
+            "This function is private when the `tokio` feature is not enabled and should be uncallable."
+        );
     }
 
     /// Spawn a task which will run using futures. The background task is provided a
@@ -98,7 +100,9 @@ impl<'w> Tasks<'w> {
         Task: Future<Output = Output> + 'static,
         Spawnable: FnOnce(TaskContext) -> Task + 'static,
     {
-        unreachable!("This function is private when the `wasm` feature is not enabled and should be uncallable.");
+        unreachable!(
+            "This function is private when the `wasm` feature is not enabled and should be uncallable."
+        );
     }
 
     pub fn spawn_auto<Task, Output, Spawnable>(
