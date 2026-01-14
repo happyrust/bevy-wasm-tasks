@@ -108,7 +108,7 @@ dependencies = [
 [[package]]
 name = "bevy_app"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "bevy_derive",
  "bevy_ecs",
@@ -127,7 +127,7 @@ dependencies = [
 [[package]]
 name = "bevy_derive"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "bevy_macro_utils",
  "quote",
@@ -137,7 +137,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "arrayvec",
  "bevy_ecs_macros",
@@ -164,7 +164,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs_macros"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "bevy_macro_utils",
  "proc-macro2",
@@ -175,7 +175,7 @@ dependencies = [
 [[package]]
 name = "bevy_macro_utils"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -186,7 +186,7 @@ dependencies = [
 [[package]]
 name = "bevy_platform"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "critical-section",
  "foldhash",
@@ -204,12 +204,12 @@ dependencies = [
 [[package]]
 name = "bevy_ptr"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 
 [[package]]
 name = "bevy_reflect"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "assert_type_match",
  "bevy_platform",
@@ -234,7 +234,7 @@ dependencies = [
 [[package]]
 name = "bevy_reflect_derive"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "bevy_macro_utils",
  "indexmap",
@@ -247,7 +247,7 @@ dependencies = [
 [[package]]
 name = "bevy_tasks"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "async-channel",
  "async-executor",
@@ -264,7 +264,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils"
 version = "0.18.0-dev"
-source = "git+https://github.com/happyrust/bevy#aa788f168c7b8337420fe3052d65c3e7e1e60ce3"
+source = "git+https://github.com/happyrust/bevy#254e66bbd4579972053b720882ac2ece6f924cb0"
 dependencies = [
  "bevy_platform",
  "disqualified",
@@ -600,9 +600,9 @@ dependencies = [
 
 [[package]]
 name = "heapless"
-version = "0.8.0"
+version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0bfb9eb618601c89945a70e254898da93b13be0388091d42117462b265bb3fad"
+checksum = "b1edcd5a338e64688fbdcb7531a846cfd3476a54784dcb918a0844682bc7ada5"
 dependencies = [
  "hash32",
  "portable-atomic",
@@ -943,9 +943,9 @@ checksum = "6ce2be8dc25455e1f91df71bfa12ad37d7af1092ae736f3a6cd0e37bc7810596"
 
 [[package]]
 name = "syn"
-version = "2.0.106"
+version = "2.0.110"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ede7c438028d4436d71104916910f5bb611972c5cfd7f89b8300a8186e6fada6"
+checksum = "a99801b5bd34ede4cf3fc688c5919368fea4e4814a4664359503e6015b280aea"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1197,9 +1197,9 @@ dependencies = [
 
 [[package]]
 name = "wgpu-types"
-version = "26.0.0"
+version = "27.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eca7a8d8af57c18f57d393601a1fb159ace8b2328f1b6b5f80893f7d672c9ae2"
+checksum = "afdcf84c395990db737f2dd91628706cb31e86d72e53482320d368e52b5da5eb"
 dependencies = [
  "bitflags",
  "bytemuck",
